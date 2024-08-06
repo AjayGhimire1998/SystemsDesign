@@ -61,7 +61,7 @@ public class IdleState implements State {
    * @throws Exception
    */
   @Override
-  public void getBackChange(int change) throws Exception {
+  public int getBackChange(int change) throws Exception {
     throw new Exception("Cannot get Change back in Idle State.");
   }
 

@@ -14,7 +14,7 @@ public interface State {
 
   void selectProduct(VendingMachine machine, int productCode) throws Exception;
 
-  void getBackChange(int change) throws Exception;
+  int getBackChange(int change) throws Exception;
 
   void dispenseProduct(VendingMachine machine, int productCode) throws Exception;
 

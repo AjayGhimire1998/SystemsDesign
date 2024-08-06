@@ -6,10 +6,10 @@ import com.ajayghimire.designPatterns.behavioralPatterns.StateDesignPattern.Vend
 import com.ajayghimire.designPatterns.behavioralPatterns.StateDesignPattern.VendingMachineExample.VendingMachine;
 import java.util.List;
 
-public class PaidState implements State {
-
-  public PaidState() {
-    System.out.println("Currently the machine is in Paid State.");
+public class DispenseState implements State {
+  public DispenseState(VendingMachine machine, int productCode) throws Exception {
+    System.out.println("Machine is currently in Dispense State.");
+    dispenseProduct(machine, productCode);
   }
 
   /**
@@ -18,7 +18,7 @@ public class PaidState implements State {
    */
   @Override
   public void clickToInsertCoin(VendingMachine machine) throws Exception {
-    throw new Exception("Click to insert Coins have already been done.");
+    throw new Exception("Insert coin button can not clicked on Dispense state.");
   }
 
   /**
@@ -27,7 +27,7 @@ public class PaidState implements State {
    */
   @Override
   public void clickToStartProductSelection(VendingMachine machine) throws Exception {
-    machine.setMachineState(new SelectionState());
+    throw new Exception("Product selection button can not be clicked in Dispense state");
   }
 
   /**
@@ -37,8 +37,7 @@ public class PaidState implements State {
    */
   @Override
   public void insertCoin(VendingMachine machine, Coin coin) throws Exception {
-    System.out.println("Accepted the inserted coins.");
-    machine.getCoinList().add(coin);
+    throw new Exception("Coins can not be inserted in Dispense state");
   }
 
   /**
@@ -48,7 +47,7 @@ public class PaidState implements State {
    */
   @Override
   public void selectProduct(VendingMachine machine, int productCode) throws Exception {
-    throw new Exception("Click on select product button first.");
+    throw new Exception("Product can not be selected in Dispense state");
   }
 
   /**
@@ -57,7 +56,7 @@ public class PaidState implements State {
    */
   @Override
   public int getBackChange(int change) throws Exception {
-    throw new Exception("Cannot get change back in Paid State.");
+    throw new Exception("Change can not returned in Dispense state");
   }
 
   /**
@@ -67,7 +66,10 @@ public class PaidState implements State {
    */
   @Override
   public void dispenseProduct(VendingMachine machine, int productCode) throws Exception {
-    throw new Exception("Cannot dispense product in Paid State.");
+    System.out.println("Product has been dispensed!");
+    Item item = machine.getInventory().getItem(productCode);
+    machine.getInventory().updateSoldOutItem(productCode);
+    machine.setMachineState(new IdleState(machine));
   }
 
   /**
@@ -77,9 +79,7 @@ public class PaidState implements State {
    */
   @Override
   public List<Coin> refundFullMoney(VendingMachine machine) throws Exception {
-    System.out.println("Cancelling purchase, refunding full coins now in the tray.");
-    machine.setMachineState(new IdleState(machine));
-    return machine.getCoinList();
+    throw new Exception("Refund can not be made in Dispense state");
   }
 
   /**
@@ -90,6 +90,6 @@ public class PaidState implements State {
    */
   @Override
   public void updateInventory(VendingMachine machine, Item item, int code) throws Exception {
-    throw new Exception("Cannot update Inventory in Paid State.");
+    throw new Exception("Inventory can not be updated in Dispense state");
   }
 }

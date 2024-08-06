@@ -7,6 +7,12 @@ public class Inventory {
     this.numberOfItems = num;
   }
 
-  public void addItem(Item item, int code) {
+  public void addItem(Item item, int code) {}
+
+  public Item getItem(int code) {
+    return new Item();
+  }
+
+  public void updateSoldOutItem(int productCode) {
   }
 }

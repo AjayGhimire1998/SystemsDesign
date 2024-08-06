@@ -36,7 +36,9 @@ public class SelectionState implements State {
    * @throws Exception
    */
   @Override
-  public void insertCoin(VendingMachine machine, Coin coin) throws Exception {}
+  public void insertCoin(VendingMachine machine, Coin coin) throws Exception {
+    throw new Exception("Already inserted the coins.");
+  }
 
   /**
    * @param machine
@@ -44,14 +46,38 @@ public class SelectionState implements State {
    * @throws Exception
    */
   @Override
-  public void selectProduct(VendingMachine machine, int productCode) throws Exception {}
+  public void selectProduct(VendingMachine machine, int productCode) throws Exception {
+    // find the product with the code
+    Item item = machine.getInventory().getItem(productCode);
+
+    // total amount paid
+
+    int paid = 0;
+    for (Coin coin : machine.getCoinList()) {
+      paid += coin.value;
+    }
+
+    // compare product price and amount paid
+    if (paid < item.getPrice()) {
+      System.out.println("Insufficient fund! Product price is: " + item.getPrice());
+      refundFullMoney(machine);
+      throw new Exception("Insufficient fund!");
+    } else if (paid > item.getPrice()) {
+      getBackChange(paid - item.getPrice());
+    } else {
+      machine.setMachineState(new DispenseState(machine, productCode));
+    }
+  }
 
   /**
    * @param change
    * @throws Exception
    */
   @Override
-  public void getBackChange(int change) throws Exception {}
+  public int getBackChange(int change) throws Exception {
+    System.out.println("Returned the change in the Coin Dispense Tray: " + change);
+    return change;
+  }
 
   /**
    * @param machine
@@ -59,7 +85,9 @@ public class SelectionState implements State {
    * @throws Exception
    */
   @Override
-  public void dispenseProduct(VendingMachine machine, int productCode) throws Exception {}
+  public void dispenseProduct(VendingMachine machine, int productCode) throws Exception {
+    throw new Exception("Product can not be dispensed while in Selection state");
+  }
 
   /**
    * @param machine
@@ -68,7 +96,9 @@ public class SelectionState implements State {
    */
   @Override
   public List<Coin> refundFullMoney(VendingMachine machine) throws Exception {
-    return List.of();
+    System.out.println("Returned the full amount back in the Coin Dispense Tray");
+    machine.setMachineState(new IdleState(machine));
+    return machine.getCoinList();
   }
 
   /**
@@ -78,5 +108,7 @@ public class SelectionState implements State {
    * @throws Exception
    */
   @Override
-  public void updateInventory(VendingMachine machine, Item item, int code) throws Exception {}
+  public void updateInventory(VendingMachine machine, Item item, int code) throws Exception {
+    throw new Exception("Inventory can not be updated while in Selection state");
+  }
 }
