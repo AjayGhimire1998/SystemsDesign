@@ -20,7 +20,11 @@ public class AirConditioner {
   }
 
   public void setTemperature(int temperature) {
-    this.temperature = temperature;
-    System.out.println("Temperature is changed to: " + temperature);
+    if (isOn) {
+      this.temperature = temperature;
+      System.out.println("Temperature is changed to: " + temperature + " degrees.");
+    } else {
+      System.out.println("Please turn on first to set temperature.");
+    }
   }
 }

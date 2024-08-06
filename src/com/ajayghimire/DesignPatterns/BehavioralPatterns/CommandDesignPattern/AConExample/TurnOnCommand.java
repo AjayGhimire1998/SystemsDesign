@@ -1,25 +1,19 @@
 package com.ajayghimire.DesignPatterns.BehavioralPatterns.CommandDesignPattern.AConExample;
 
-public class TurnOnCommand implements ICommand{
+public class TurnOnCommand implements ICommand {
   private AirConditioner airConditioner;
 
   public TurnOnCommand(AirConditioner airConditioner) {
     this.airConditioner = airConditioner;
   }
 
-  /**
-*
-*/
+  /** */
   @Override
   public void execute() {
-      this.airConditioner.turnOn();
+    this.airConditioner.turnOn();
   }
 
-/**
-*
-*/
+  /** */
   @Override
-  public void undo() {
-
-  }
+  public void undo() {}
 }
