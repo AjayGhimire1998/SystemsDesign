@@ -1,7 +1,7 @@
 package com.ajayghimire.designPatterns.behavioralPatterns.StateDesignPattern.VendingMachineExample;
 
-import com.ajayghimire.designPatterns.behavioralPatterns.StateDesignPattern.VendingMachineExample.MachineStates.State;
 import com.ajayghimire.designPatterns.behavioralPatterns.StateDesignPattern.VendingMachineExample.MachineStates.StateImplementations.IdleState;
+import com.ajayghimire.designPatterns.behavioralPatterns.StateDesignPattern.VendingMachineExample.MachineStates.State;
 import java.util.ArrayList;
 import java.util.List;
 

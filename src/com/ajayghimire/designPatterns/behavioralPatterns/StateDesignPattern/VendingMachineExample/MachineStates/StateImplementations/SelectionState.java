@@ -12,6 +12,7 @@ public class SelectionState implements State {
     System.out.println("Currently Vending machine is in SelectionState");
   }
 
+
   /**
    * @param machine
    * @throws Exception
