@@ -4,8 +4,17 @@ import com.ajayghimire.designPatterns.behavioralPatterns.strategyDesignPattern.s
 
 public class Vehicle {
   public DriveStrategy driveStrategy;
+  int make;
+  String brand;
 
-  Vehicle(DriveStrategy strategy) {
+
+  Vehicle(DriveStrategy strategy, int make, String brand) {
     this.driveStrategy = strategy;
+    this.make = make;
+    this.brand = brand;
+  }
+
+  public void drive() {
+    this.driveStrategy.drive();
   }
 }
