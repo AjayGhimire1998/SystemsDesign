@@ -1,7 +1,6 @@
 package com.ajayghimire.designPatterns.behavioralPatterns.strategyDesignPattern;
 
-import com.ajayghimire.designPatterns.behavioralPatterns.strategyDesignPattern.strategy.DriveStrategy;
-import com.ajayghimire.designPatterns.behavioralPatterns.strategyDesignPattern.strategy.SportDriveStrategy;
+import com.ajayghimire.designPatterns.behavioralPatterns.strategyDesignPattern.vehiclesExample.strategy.SportDriveStrategy;
 
 public class SportsVehicle extends Vehicle {
 
