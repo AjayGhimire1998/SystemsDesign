@@ -17,7 +17,9 @@ public class PaidState implements State {
    * @throws Exception
    */
   @Override
-  public void clickToInsertCoin(VendingMachine machine) throws Exception {}
+  public void clickToInsertCoin(VendingMachine machine) throws Exception {
+    throw new Exception("Click to insert Coins have already been done.");
+  }
 
   /**
    * @param machine
@@ -35,7 +37,8 @@ public class PaidState implements State {
    */
   @Override
   public void insertCoin(VendingMachine machine, Coin coin) throws Exception {
-
+    System.out.println("Accepted the inserted coins.");
+    machine.getCoinList().add(coin);
   }
 
   /**
@@ -44,14 +47,18 @@ public class PaidState implements State {
    * @throws Exception
    */
   @Override
-  public void selectProduct(VendingMachine machine, int productCode) throws Exception {}
+  public void selectProduct(VendingMachine machine, int productCode) throws Exception {
+    throw new Exception("Click on select product button first.");
+  }
 
   /**
    * @param change
    * @throws Exception
    */
   @Override
-  public void getBackChange(int change) throws Exception {}
+  public void getBackChange(int change) throws Exception {
+    throw new Exception("Cannot get change back in Paid State.");
+  }
 
   /**
    * @param machine
@@ -59,7 +66,9 @@ public class PaidState implements State {
    * @throws Exception
    */
   @Override
-  public void dispenseProduct(VendingMachine machine, int productCode) throws Exception {}
+  public void dispenseProduct(VendingMachine machine, int productCode) throws Exception {
+    throw new Exception("Cannot dispense product in Paid State.");
+  }
 
   /**
    * @param machine
@@ -68,7 +77,9 @@ public class PaidState implements State {
    */
   @Override
   public List<Coin> refundFullMoney(VendingMachine machine) throws Exception {
-    return List.of();
+    System.out.println("Cancelling purchase, refunding full coins now in the tray.");
+    machine.setMachineState(new IdleState(machine));
+    return machine.getCoinList();
   }
 
   /**
@@ -78,5 +89,7 @@ public class PaidState implements State {
    * @throws Exception
    */
   @Override
-  public void updateInventory(VendingMachine machine, Item item, int code) throws Exception {}
+  public void updateInventory(VendingMachine machine, Item item, int code) throws Exception {
+    throw new Exception("Cannot update Inventory in Paid State.");
+  }
 }
