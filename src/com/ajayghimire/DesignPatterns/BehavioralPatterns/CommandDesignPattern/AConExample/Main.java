@@ -4,14 +4,20 @@ public class Main {
   public static void main(String[] args) {
     AirConditioner airConditioner = new AirConditioner();
 
+    RemoteController remoteController = new RemoteController();
     ICommand turnOnCommand = new TurnOnCommand(airConditioner);
-    turnOnCommand.execute();
+    remoteController.setCommand(turnOnCommand);
+    remoteController.pressButton();
 
-    CommandInputable setTempCommand = new SetTemperatureCommand(airConditioner);
-    setTempCommand.execute(19);
+    ICommand setTempCommand = new SetTemperatureCommand(airConditioner, 24);
+    remoteController.setCommand(setTempCommand);
+    remoteController.pressButton();
 
     ICommand turnOffCommand = new TurnOffCommand(airConditioner);
-    turnOffCommand.execute();
-    setTempCommand.execute(15);
+    remoteController.setCommand(turnOffCommand);
+    remoteController.pressButton();
+
+    remoteController.setCommand(new SetTemperatureCommand(airConditioner, 100));
+    remoteController.pressButton();
   }
 }
