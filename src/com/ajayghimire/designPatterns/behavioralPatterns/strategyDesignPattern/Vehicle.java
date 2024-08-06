@@ -1,5 +1,11 @@
 package com.ajayghimire.designPatterns.behavioralPatterns.strategyDesignPattern;
 
-public class Vehicle {
+import com.ajayghimire.designPatterns.behavioralPatterns.strategyDesignPattern.strategy.DriveStrategy;
 
+public class Vehicle {
+  public DriveStrategy driveStrategy;
+
+  Vehicle(DriveStrategy strategy) {
+    this.driveStrategy = strategy;
+  }
 }
