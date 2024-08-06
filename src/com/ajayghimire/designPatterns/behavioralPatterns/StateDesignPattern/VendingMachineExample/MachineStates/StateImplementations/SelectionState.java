@@ -64,6 +64,7 @@ public class SelectionState implements State {
       throw new Exception("Insufficient fund!");
     } else if (paid > item.getPrice()) {
       getBackChange(paid - item.getPrice());
+      machine.setMachineState(new DispenseState(machine, productCode));
     } else {
       machine.setMachineState(new DispenseState(machine, productCode));
     }

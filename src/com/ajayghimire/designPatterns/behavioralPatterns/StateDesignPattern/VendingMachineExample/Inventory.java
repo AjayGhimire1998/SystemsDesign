@@ -46,7 +46,6 @@ public class Inventory {
         if (itemShelf.isSoldOut()) {
           throw new Exception("item already sold out");
         } else {
-
           return itemShelf.getItem();
         }
       }
