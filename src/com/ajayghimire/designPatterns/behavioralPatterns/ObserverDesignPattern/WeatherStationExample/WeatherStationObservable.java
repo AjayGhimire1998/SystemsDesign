@@ -1,7 +1,4 @@
-package com.ajayghimire.designPatterns.behavioralPatterns.observerDesignPattern.weatherStationExample;
-
-import java.util.ArrayList;
-import java.util.List;
+package com.ajayghimire.designPatterns.behavioralPatterns.ObserverDesignPattern.WeatherStationExample;
 
 public interface WeatherStationObservable {
 

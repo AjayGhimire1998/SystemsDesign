@@ -1,4 +1,4 @@
-package com.ajayghimire.designPatterns.behavioralPatterns.observerDesignPattern.weatherStationExample;
+package com.ajayghimire.designPatterns.behavioralPatterns.ObserverDesignPattern.WeatherStationExample;
 
 public class DisplayObservableImp implements DisplayObservable {
 

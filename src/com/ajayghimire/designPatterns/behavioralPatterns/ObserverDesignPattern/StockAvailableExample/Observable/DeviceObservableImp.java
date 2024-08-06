@@ -1,6 +1,6 @@
-package com.ajayghimire.designPatterns.behavioralPatterns.observerDesignPattern.stockAvailableExample.Observable;
+package com.ajayghimire.designPatterns.behavioralPatterns.ObserverDesignPattern.StockAvailableExample.Observable;
 
-import com.ajayghimire.designPatterns.behavioralPatterns.observerDesignPattern.stockAvailableExample.Observers.AlertObserver;
+import com.ajayghimire.designPatterns.behavioralPatterns.ObserverDesignPattern.StockAvailableExample.Observers.AlertObserver;
 import java.util.ArrayList;
 import java.util.List;
 

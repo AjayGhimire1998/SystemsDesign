@@ -1,4 +1,4 @@
-package com.ajayghimire.designPatterns.behavioralPatterns.strategyDesignPattern;
+package com.ajayghimire.designPatterns.behavioralPatterns.StrategyDesignPattern;
 
 public class Main {
   public static void main(String[] args) {

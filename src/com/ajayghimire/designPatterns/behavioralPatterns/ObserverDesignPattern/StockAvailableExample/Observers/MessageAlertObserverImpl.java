@@ -1,6 +1,6 @@
-package com.ajayghimire.designPatterns.behavioralPatterns.observerDesignPattern.stockAvailableExample.Observers;
+package com.ajayghimire.designPatterns.behavioralPatterns.ObserverDesignPattern.StockAvailableExample.Observers;
 
-import com.ajayghimire.designPatterns.behavioralPatterns.observerDesignPattern.stockAvailableExample.Observable.StockObservable;
+import com.ajayghimire.designPatterns.behavioralPatterns.ObserverDesignPattern.StockAvailableExample.Observable.StockObservable;
 
 public class MessageAlertObserverImpl implements AlertObserver{
   String phoneNumber;

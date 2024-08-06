@@ -1,6 +1,6 @@
-package com.ajayghimire.designPatterns.behavioralPatterns.strategyDesignPattern;
+package com.ajayghimire.designPatterns.behavioralPatterns.StrategyDesignPattern;
 
-import com.ajayghimire.designPatterns.behavioralPatterns.strategyDesignPattern.vehiclesExample.strategy.DriveStrategy;
+import com.ajayghimire.designPatterns.behavioralPatterns.StrategyDesignPattern.vehiclesExample.strategy.DriveStrategy;
 
 public class Vehicle {
   public DriveStrategy driveStrategy;

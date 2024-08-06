@@ -1,4 +1,4 @@
-package com.ajayghimire.designPatterns.behavioralPatterns.strategyDesignPattern.vehiclesExample.strategy;
+package com.ajayghimire.designPatterns.behavioralPatterns.StrategyDesignPattern.vehiclesExample.strategy;
 
 public class SportDriveStrategy implements  DriveStrategy{
 
