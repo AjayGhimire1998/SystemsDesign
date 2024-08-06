@@ -4,6 +4,7 @@ public class ItemShelf {
 
   private int productCode;
   private Item item;
+  private boolean soldOut;
 
   public Item getItem() {
     return item;
@@ -21,9 +22,11 @@ public class ItemShelf {
     this.productCode = productCode;
   }
 
-  public void setCode(int startCode) {}
+  public boolean isSoldOut() {
+    return soldOut;
+  }
 
-  public boolean isSoldOut() {}
-
-  public void setSoldOut(boolean b) {}
+  public void setSoldOut(boolean soldOut) {
+    this.soldOut = soldOut;
+  }
 }

@@ -20,7 +20,7 @@ public class Inventory {
     int startCode = 101;
     for (int i = 0; i < inventory.length; i++) {
       ItemShelf space = new ItemShelf();
-      space.setCode(startCode);
+      space.setProductCode(startCode);
       space.setSoldOut(true);
       inventory[i] = space;
       startCode++;
