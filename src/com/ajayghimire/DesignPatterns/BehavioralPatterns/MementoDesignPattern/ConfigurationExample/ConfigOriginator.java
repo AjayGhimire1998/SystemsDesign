@@ -21,8 +21,19 @@ public class ConfigOriginator {
     return new ConfigMemento(this.configName, this.configVersion);
   }
 
-  void restoreMemento(ConfigMemento mementoToRestore) {
+  public void restoreMemento(ConfigMemento mementoToRestore) {
     this.configName = mementoToRestore.getConfigName();
     this.configVersion = mementoToRestore.getConfigVersion();
+  }
+
+  @Override
+  public String toString() {
+    return "ConfigOriginator{"
+        + "configName='"
+        + configName
+        + '\''
+        + ", configVersion="
+        + configVersion
+        + '}';
   }
 }

@@ -11,7 +11,7 @@ public class ConfigCaretaker {
     history.add(mementoToAdd);
   }
 
-  public ConfigMemento undo() {
+  public ConfigMemento undo() throws Exception {
     if (!history.isEmpty()) {
       int lastMementoIndex = history.size() - 1;
 
@@ -19,6 +19,6 @@ public class ConfigCaretaker {
       history.remove(lastMementoIndex);
       return lastMemento;
     }
-    return null;
+    throw new Exception("No more memento snapshot to restore.");
   }
 }
