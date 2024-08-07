@@ -1,17 +1,15 @@
 package com.ajayghimire.DesignPatterns.BehavioralPatterns.InterpreterDesignPattern.EmployeePaymentExample;
 
 public enum PayIntervalContext {
-  WEEKLY(7),
-  FORTNIGHTLY(15),
-  MONTHLY(30);
+  WEEKLY(5);
 
-  private int days;
+  private int numberOfDaysToWork;
 
-  PayIntervalContext(int numberOfDays) {
-    this.days = numberOfDays;
+  PayIntervalContext(int days) {
+    this.numberOfDaysToWork = days;
   }
 
-  public int getDays() {
-    return days;
+  public int getWeeklyWorkingDays() {
+    return PayIntervalContext.WEEKLY.numberOfDaysToWork;
   }
 }
