@@ -5,6 +5,10 @@ public class MainClient {
     PayIntervalExpression terminalPayIntervalExpression = new WeeklyTerminalPayIntervalExpression();
 
     PayIntervalContext context = PayIntervalContext.WEEKLY;
+
+    PayIntervalExpression weeklyPay = new WeeklyTerminalPayIntervalExpression();
+    System.out.println(weeklyPay.interpret(context));
+
     PayIntervalExpression fortnightlyPay =
         new FortnightlyPayExpression(terminalPayIntervalExpression);
     fortnightlyPay.interpret(context);
