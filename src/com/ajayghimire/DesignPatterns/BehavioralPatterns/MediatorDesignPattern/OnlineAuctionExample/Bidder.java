@@ -7,6 +7,7 @@ public class Bidder implements IBidder {
   public Bidder(String name, IAuctionMediator mediator) {
     this.name = name;
     this.mediator = mediator;
+    this.mediator.addBidder(this);
   }
 
   @Override
@@ -26,5 +27,13 @@ public class Bidder implements IBidder {
    * @param bidAmount
    */
   @Override
-  public void receiveNotification(int bidAmount) {}
+  public void receiveNotification(int bidAmount) {
+    System.out.println(
+        "Bidding notification has been sent to "
+            + this.getName()
+            + ". "
+            + "The new amount now is "
+            + bidAmount
+            + "$.");
+  }
 }
