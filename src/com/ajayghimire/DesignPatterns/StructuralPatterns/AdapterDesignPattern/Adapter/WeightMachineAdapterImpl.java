@@ -5,8 +5,8 @@ import com.ajayghimire.DesignPatterns.StructuralPatterns.AdapterDesignPattern.Ad
 public class WeightMachineAdapterImpl implements WeightMachineAdapter {
   private WeightMachineAdaptee weightMachineAdaptee;
 
-  public WeightMachineAdapterImpl(WeightMachineAdaptee weightMachineAdaptee) {
-    this.weightMachineAdaptee = weightMachineAdaptee;
+  public WeightMachineAdapterImpl(WeightMachineAdaptee client) {
+    this.weightMachineAdaptee = client;
   }
 
   /**
