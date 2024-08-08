@@ -3,6 +3,10 @@ package com.ajayghimire.DesignPatterns.StructuralPatterns.CompositeDesignPattern
 public class Number implements ArithmeticExpression {
   private int value;
 
+  public Number(int value) {
+    this.value = value;
+  }
+
   /**
    * @return
    */
