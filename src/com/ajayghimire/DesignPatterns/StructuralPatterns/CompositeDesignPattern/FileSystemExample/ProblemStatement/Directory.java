@@ -15,4 +15,15 @@ public class Directory {
   public void add(Object obj) {
     this.objectList.add(obj);
   }
+
+  public void ls() {
+    System.out.println("This is a directory: " + this.directoryName);
+    for (Object obj : objectList) {
+      if (obj instanceof File) {
+        ((File) obj).ls();
+      } else if (obj instanceof Directory) {
+        ((Directory) obj).ls();
+      }
+    }
+  }
 }
