@@ -16,6 +16,11 @@ public class MainClient {
     showsDirectory.add(show);
     watchDirectory.add(showsDirectory);
 
+    Directory shortsDirectory = new Directory("Short Movies");
+    File shortMovie = new File("Pika");
+
+    shortsDirectory.add(shortMovie);
+    moviesDirectory.add(shortsDirectory);
     watchDirectory.ls();
   }
 }

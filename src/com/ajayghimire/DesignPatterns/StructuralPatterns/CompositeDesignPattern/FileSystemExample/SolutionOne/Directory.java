@@ -19,10 +19,8 @@ public class Directory implements FileSystem {
   /** */
   @Override
   public void ls() {
-
     System.out.println("This is a directory: " + this.directoryName);
     for (FileSystem fileSystem : fileSystemList) {
-      System.out.print("\t");
       System.out.print("\t");
       fileSystem.ls();
     }
