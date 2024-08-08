@@ -10,6 +10,8 @@ public class File implements FileSystem {
   /** */
   @Override
   public void ls() {
+    System.out.print("\t");
     System.out.println("This is a file: " + this.fileName);
+
   }
 }

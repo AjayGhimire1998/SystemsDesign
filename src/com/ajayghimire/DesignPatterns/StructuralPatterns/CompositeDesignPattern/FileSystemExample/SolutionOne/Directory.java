@@ -12,10 +12,18 @@ public class Directory implements FileSystem {
     this.fileSystemList = new ArrayList<>();
   }
 
+  public void add(FileSystem fileSystem) {
+    fileSystemList.add(fileSystem);
+  }
+
   /** */
   @Override
   public void ls() {
+
+    System.out.println("This is a directory: " + this.directoryName);
     for (FileSystem fileSystem : fileSystemList) {
+      System.out.print("\t");
+      System.out.print("\t");
       fileSystem.ls();
     }
   }
