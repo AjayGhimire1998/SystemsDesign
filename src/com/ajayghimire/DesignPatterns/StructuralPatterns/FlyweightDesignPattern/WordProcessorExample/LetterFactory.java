@@ -10,7 +10,9 @@ public class LetterFactory {
     if (letterCache.containsKey(charValue)) {
       return letterCache.get(charValue);
     } else {
-      ILetter letter = new DocumentCharacter();
+      ILetter letter = new DocumentCharacter(charValue, "New Times Roman", 12);
+      letterCache.put(charValue, letter);
+      return letter;
     }
   }
 }

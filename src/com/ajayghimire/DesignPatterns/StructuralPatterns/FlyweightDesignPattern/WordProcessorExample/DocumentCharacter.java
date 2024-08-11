@@ -27,6 +27,9 @@ public class DocumentCharacter implements ILetter {
   @Override
   public void display(int row, int column) {
     System.out.printf(
-        "Entering %s in row position %d and column position %d.", this.character, row, column);
+        "Entering %s in row position %d and column position %d.\n", this.character, row, column);
+
+    LetterViewer.displayMatrix(this.character, row, column);
+
   }
 }
