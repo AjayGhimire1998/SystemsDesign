@@ -19,5 +19,11 @@ public class ClientMain {
 
     IRobot doggonoid2 = RobotFactory.createRobot("doggonoid");
     doggonoid2.display(7, 9);
+
+//    for (int i = 0; i < 100; i++) {
+//      IRobot humanoid = RobotFactory.createRobot("humanoid");
+//      humanoid.display(i + 1, i + 2);
+//      System.out.println("------------------------------------------------");
+//    }
   }
 }
