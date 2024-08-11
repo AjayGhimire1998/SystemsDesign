@@ -10,13 +10,19 @@ public class LetterViewer {
     System.out.println(charMatrix);
   }
 
-  private static void insertToMatrix(char charValue, int row, int column){
-    for(int i = 0; i< row; i++){
-      ArrayList<Character> rowList = new ArrayList<>();
-      for(int j = 0; j< column; j++){
-        rowList.add(charValue);
-      }
-      charMatrix.add(rowList);
+  private static void insertToMatrix(char charValue, int row, int column) {
+    // Ensure that the matrix has enough rows
+    while (charMatrix.size() <= row) {
+      charMatrix.add(new ArrayList<>());
     }
+
+    // Ensure that the row has enough columns
+    ArrayList<Character> rowList = charMatrix.get(row);
+    while (rowList.size() <= column) {
+      rowList.add(' '); // Fill with space or any placeholder character
+    }
+
+    // Insert the character at the specified position
+    rowList.set(column, charValue);
   }
 }

@@ -7,5 +7,8 @@ public class ClientMain {
 
     ILetter letter2 = LetterFactory.createLetter('J');
     letter2.display(0, 2);
+
+    ILetter letter3 = LetterFactory.createLetter('A');
+    letter3.display(0, 4);
   }
 }

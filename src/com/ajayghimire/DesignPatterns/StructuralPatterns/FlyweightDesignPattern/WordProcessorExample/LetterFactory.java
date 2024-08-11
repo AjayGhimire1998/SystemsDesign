@@ -8,6 +8,7 @@ public class LetterFactory {
 
   public static ILetter createLetter(char charValue) {
     if (letterCache.containsKey(charValue)) {
+      System.out.println("Returning back the already exist charValue " + charValue);
       return letterCache.get(charValue);
     } else {
       ILetter letter = new DocumentCharacter(charValue, "New Times Roman", 12);
