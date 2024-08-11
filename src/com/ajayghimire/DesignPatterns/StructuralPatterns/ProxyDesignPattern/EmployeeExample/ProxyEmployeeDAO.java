@@ -40,7 +40,11 @@ public class ProxyEmployeeDAO implements IEmployeeDAO {
    * @return
    */
   @Override
-  public EmployeeDAO get(String client, int employeeID) {
-    return null;
+  public EmployeeDAO get(String client, int employeeID) throws Exception {
+    if (client.equalsIgnoreCase("admin") || client.equalsIgnoreCase("user")) {
+      return employeeDAO.get(client, employeeID);
+    }
+
+    throw new Exception("Access Denied!");
   }
 }
