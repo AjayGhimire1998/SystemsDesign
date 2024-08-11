@@ -14,4 +14,8 @@ public class EmployeeFacade {
   Employee getEmployeeDetails(int employeeID) {
     return employeeDAO.getEmployeeDetails(employeeID);
   }
+
+  Employee getEmployeeDetails(String email) {
+    return employeeDAO.getEmployeeDetails(email);
+  }
 }
