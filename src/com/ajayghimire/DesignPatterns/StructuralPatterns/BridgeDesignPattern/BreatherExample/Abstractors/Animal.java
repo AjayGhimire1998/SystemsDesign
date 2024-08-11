@@ -2,9 +2,9 @@ package com.ajayghimire.DesignPatterns.StructuralPatterns.BridgeDesignPattern.Br
 
 import com.ajayghimire.DesignPatterns.StructuralPatterns.BridgeDesignPattern.BreatherExample.Implementors.IBreather;
 
-public class WaterBreather extends AbstractBreathers {
+public class Animal extends AbstractBreathers {
 
-  public WaterBreather(IBreather breather) {
+  public Animal(IBreather breather) {
     super(breather);
   }
 
