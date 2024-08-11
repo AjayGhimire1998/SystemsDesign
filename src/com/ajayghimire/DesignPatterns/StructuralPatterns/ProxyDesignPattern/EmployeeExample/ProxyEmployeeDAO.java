@@ -1,7 +1,7 @@
 package com.ajayghimire.DesignPatterns.StructuralPatterns.ProxyDesignPattern.EmployeeExample;
 
 public class ProxyEmployeeDAO implements IEmployeeDAO {
-  IEmployeeDAO employeeDAO;
+  EmployeeDAOImpl employeeDAO;
 
   public ProxyEmployeeDAO() {
     this.employeeDAO = new EmployeeDAOImpl();
