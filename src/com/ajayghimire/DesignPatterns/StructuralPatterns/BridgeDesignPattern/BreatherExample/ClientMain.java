@@ -20,5 +20,8 @@ public class ClientMain {
     Water water = new Water(new WaterBreather());
     water.breatheProcess();
     System.out.println("---------------------------------------------");
+
+    Water waterMammal = new Water(new AnimalBreather());
+    waterMammal.breatheProcess();
   }
 }
