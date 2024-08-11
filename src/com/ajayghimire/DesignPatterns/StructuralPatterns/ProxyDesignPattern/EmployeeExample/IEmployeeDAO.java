@@ -1,9 +1,9 @@
 package com.ajayghimire.DesignPatterns.StructuralPatterns.ProxyDesignPattern.EmployeeExample;
 
 public interface IEmployeeDAO {
-  void create(String client, EmployeeDAO obj);
+  void create(String client, EmployeeDAO obj) throws Exception;
 
-  void delete(String client, int employeeID);
+  void delete(String client, int employeeID) throws Exception;
 
-  EmployeeDAO get(String client, int employeeID);
+  EmployeeDAO get(String client, int employeeID) throws Exception;
 }

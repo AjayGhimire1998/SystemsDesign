@@ -1,33 +1,44 @@
 package com.ajayghimire.DesignPatterns.StructuralPatterns.ProxyDesignPattern.EmployeeExample;
 
-public class ProxyEmployeeDAO implements IEmployeeDAO{
+public class ProxyEmployeeDAO implements IEmployeeDAO {
+  IEmployeeDAO employeeDAO;
 
-/**
-*
- * @param client
- * @param obj
-*/
-  @Override
-  public void create(String client, EmployeeDAO obj) {
-
+  public ProxyEmployeeDAO() {
+    this.employeeDAO = new EmployeeDAOImpl();
   }
 
-/**
-*
- * @param client
- * @param employeeID
-*/
+  /**
+   * @param client
+   * @param obj
+   */
   @Override
-  public void delete(String client, int employeeID) {
-
+  public void create(String client, EmployeeDAO obj) throws Exception {
+    if (client.equalsIgnoreCase("admin")) {
+      employeeDAO.create(client, obj);
+      return;
+    }
+    throw new Exception("Access Denied!");
   }
 
-/**
-*
- * @param client
- * @param employeeID
- * @return
-*/
+  /**
+   * @param client
+   * @param employeeID
+   */
+  @Override
+  public void delete(String client, int employeeID) throws Exception {
+    if (client.equalsIgnoreCase("admin")) {
+      employeeDAO.delete(client, employeeID);
+      return;
+    }
+
+    throw new Exception("Access Denied!");
+  }
+
+  /**
+   * @param client
+   * @param employeeID
+   * @return
+   */
   @Override
   public EmployeeDAO get(String client, int employeeID) {
     return null;
