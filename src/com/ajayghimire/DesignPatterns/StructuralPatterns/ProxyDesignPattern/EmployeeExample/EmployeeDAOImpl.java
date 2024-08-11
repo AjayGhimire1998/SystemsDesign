@@ -28,6 +28,6 @@ public class EmployeeDAOImpl implements IEmployeeDAO {
   @Override
   public EmployeeDAO get(String client, int employeeID) {
     System.out.println("Fetching employee from the Employees table with employeeID: " + employeeID);
-    return new EmployeeDAO();
+    return new EmployeeDAO(employeeID);
   }
 }
