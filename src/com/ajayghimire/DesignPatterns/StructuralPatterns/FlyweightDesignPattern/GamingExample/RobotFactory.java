@@ -8,6 +8,7 @@ public class RobotFactory {
 
   public static IRobot createRobot(String robotType) {
     if (robotCache.containsKey(robotType)) {
+      System.out.println("Returning the already existing " + robotType + ".");
       return robotCache.get(robotType);
     } else {
       if (robotType.equalsIgnoreCase("humanoid")) {
@@ -17,7 +18,7 @@ public class RobotFactory {
         return humanoid;
       } else if (robotType.equalsIgnoreCase("doggonoid")) {
         Sprite doggonoidSprite = new Sprite();
-        IRobot doggonoid = new Humanoid(robotType, doggonoidSprite);
+        IRobot doggonoid = new Doggonoid(robotType, doggonoidSprite);
         robotCache.put(robotType, doggonoid);
         return doggonoid;
       }

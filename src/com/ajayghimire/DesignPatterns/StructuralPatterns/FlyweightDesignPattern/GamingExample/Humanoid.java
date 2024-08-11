@@ -14,7 +14,7 @@ public class Humanoid extends AbstractRobot implements IRobot {
   public void display(int x, int y) {
     String result =
         String.format(
-            "Displaying %s with x-cord %f and y-cord %f.", this.getClass().getName(), x, y);
+            "Displaying %s with x-cord %d and y-cord %d.", this.getClass().getSimpleName(), x, y);
     System.out.println(result);
   }
 }
