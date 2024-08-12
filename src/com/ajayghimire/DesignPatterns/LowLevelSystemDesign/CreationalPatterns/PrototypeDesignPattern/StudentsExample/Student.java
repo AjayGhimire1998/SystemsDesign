@@ -20,4 +20,14 @@ public class Student implements Prototype {
   public Prototype clone() {
     return new Student(this.rollNumber, this.name, this.age, this.fees);
   }
+
+  @Override
+  public String toString() {
+    return "Student{" +
+        "rollNumber=" + rollNumber +
+        ", name='" + name + '\'' +
+        ", age=" + age +
+        ", fees=" + fees +
+        '}';
+  }
 }
