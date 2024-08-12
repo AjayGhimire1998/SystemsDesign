@@ -8,7 +8,7 @@ public abstract class StudentBuilder {
   private String name;
   private String fatherName;
   private String motherName;
-  private List<String> subjects;
+  public  List<String> subjects;
 
   public int getRollNumber() {
     return rollNumber;
@@ -55,11 +55,8 @@ public abstract class StudentBuilder {
     return this;
   }
 
-  public List<String> getSubjects() {
-    return subjects;
-  }
 
-  public abstract StudentBuilder setSubjects(List<String> subjects);
+  public abstract StudentBuilder setSubjects();
 
   public Student build() {
     return new Student(this);

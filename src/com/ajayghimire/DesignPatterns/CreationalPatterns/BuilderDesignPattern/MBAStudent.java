@@ -10,8 +10,8 @@ public class MBAStudent extends StudentBuilder {
    * @return
    */
   @Override
-  public StudentBuilder setSubjects(List<String> subjects) {
-    this.setSubjects(getSubjects());
+  public StudentBuilder setSubjects() {
+    this.subjects = getSubjects();
     return this;
   }
 
