@@ -12,8 +12,16 @@ public final class DBConnectionPoolManager {
 
   public DBConnectionPoolManager() {
     for (int i = 0; i < INITIAL_POOL_SIZE; i++) {
-      freeConnectionsPool.add(new DBConnection());
+      freeConnectionsPool.add(new DBConnection("Connection" + (i + 1)));
     }
+  }
+
+  public List<DBConnection> getFreeConnectionsPool() {
+    return freeConnectionsPool;
+  }
+
+  public List<DBConnection> getInUseConnectionsPool() {
+    return inUseConnectionsPool;
   }
 
   public static DBConnectionPoolManager getInstance() {
@@ -29,13 +37,14 @@ public final class DBConnectionPoolManager {
 
   public synchronized DBConnection getDBConnection() {
     if (freeConnectionsPool.isEmpty() && inUseConnectionsPool.size() < MAXIMUM_POOL_SIZE) {
-      freeConnectionsPool.add(new DBConnection());
+      freeConnectionsPool.add(new DBConnection("New added Connection"));
     } else if (freeConnectionsPool.isEmpty() && inUseConnectionsPool.size() >= MAXIMUM_POOL_SIZE) {
       return null;
     }
 
     DBConnection dbConnection = freeConnectionsPool.remove(freeConnectionsPool.size() - 1);
     inUseConnectionsPool.add(dbConnection);
+    System.out.println(dbConnection);
     return dbConnection;
   }
 
