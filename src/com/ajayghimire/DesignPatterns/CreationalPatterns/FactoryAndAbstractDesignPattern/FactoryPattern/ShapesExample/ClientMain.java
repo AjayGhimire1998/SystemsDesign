@@ -1,4 +1,4 @@
-package com.ajayghimire.DesignPatterns.CreationalPatterns.FactoryAndAbstractDesignPattern.ShapesExample;
+package com.ajayghimire.DesignPatterns.CreationalPatterns.FactoryAndAbstractDesignPattern.FactoryPattern.ShapesExample;
 
 public class ClientMain {
   public static void main(String[] args) {
