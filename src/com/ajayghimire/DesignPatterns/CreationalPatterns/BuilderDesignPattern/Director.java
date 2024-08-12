@@ -8,9 +8,9 @@ public class Director {
   }
 
   public Student createStudent() {
-    if (studentBuilder instanceof SoftwareEngineeringStudent) {
+    if (studentBuilder instanceof SoftwareEngineeringStudentBuilder) {
       return createSoftwareEngineeringStudent();
-    } else if (studentBuilder instanceof MBAStudent) {
+    } else if (studentBuilder instanceof MBAStudentBuilder) {
       return createMBAStudent();
     }
     return null;
@@ -21,7 +21,7 @@ public class Director {
   }
 
   private Student createSoftwareEngineeringStudent() {
-    studentBuilder
+    return studentBuilder
         .setRollNumber(2)
         .setAge(26)
         .setName("AJAY")

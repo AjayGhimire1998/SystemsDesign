@@ -55,6 +55,9 @@ public abstract class StudentBuilder {
     return this;
   }
 
+  public List<String> getSubjects() {
+    return subjects;
+  }
 
   public abstract StudentBuilder setSubjects();
 

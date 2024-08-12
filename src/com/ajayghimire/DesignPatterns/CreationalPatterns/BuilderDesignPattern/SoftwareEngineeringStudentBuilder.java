@@ -3,10 +3,9 @@ package com.ajayghimire.DesignPatterns.CreationalPatterns.BuilderDesignPattern;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MBAStudent extends StudentBuilder {
+public class SoftwareEngineeringStudentBuilder extends StudentBuilder {
 
   /**
-   * @param subjects
    * @return
    */
   @Override
@@ -17,10 +16,10 @@ public class MBAStudent extends StudentBuilder {
 
   public List<String> getSubjects() {
     List<String> subjects = new ArrayList<>();
-    subjects.add("Economics");
-    subjects.add("Business Studies");
-    subjects.add("Accounting");
-    subjects.add("Business Design");
+    subjects.add("Computer Science");
+    subjects.add("DSA");
+    subjects.add("OOP");
+    subjects.add("System Design");
     return subjects;
   }
 }
