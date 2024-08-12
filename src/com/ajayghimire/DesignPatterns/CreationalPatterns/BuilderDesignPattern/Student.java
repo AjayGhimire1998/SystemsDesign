@@ -12,7 +12,11 @@ public class Student {
 
   public Student(StudentBuilder studentBuilder) {
     this.rollNumber = studentBuilder.getRollNumber();
-
+    this.age = studentBuilder.getAge();
+    this.name = studentBuilder.getName();
+    this.fatherName = studentBuilder.getFatherName();
+    this.motherName = studentBuilder.getMotherName();
+    this.subjects = studentBuilder.getSubjects();
   }
 
   @Override

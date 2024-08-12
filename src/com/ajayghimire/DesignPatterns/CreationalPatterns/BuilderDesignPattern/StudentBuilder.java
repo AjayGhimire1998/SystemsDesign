@@ -59,10 +59,7 @@ public abstract class StudentBuilder {
     return subjects;
   }
 
-  public StudentBuilder setSubjects(List<String> subjects) {
-    this.subjects = subjects;
-    return this;
-  }
+  public abstract StudentBuilder setSubjects(List<String> subjects);
 
   public Student build() {
     return new Student(this);
